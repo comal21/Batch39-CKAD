@@ -105,4 +105,7 @@ cat completed.txt
 ```
 exit
 ```
-
+#### Cleanup
+```
+kubectl delete po --all -n default
+```
