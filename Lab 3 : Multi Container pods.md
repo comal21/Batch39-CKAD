@@ -1,5 +1,8 @@
 ## Multi-container
-
+Switch to root user
+```
+sudo su
+```
 ### Task 1: Sidecar container
 ```
 vi sidecar.yaml
