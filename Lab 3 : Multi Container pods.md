@@ -75,7 +75,6 @@ kubectl apply -f init.yaml
 ```
 kubectl get pod
 ```
-![image](https://github.com/user-attachments/assets/4aa61bfd-9bfd-43da-8e87-f6e78fcdb3ed)
 
 
 Go and update the command for the init container to write the file after a lapse of 60 seconds. You would notice the main container starting only after init container has completed its task
@@ -90,7 +89,6 @@ kubectl replace -f init-pod.yaml --force
 kubectl get po
 ```
 Notice the PodInitializing status coming up only after a lapse of 60 seconds 
-![image](https://github.com/user-attachments/assets/445d7c73-9766-46a7-be43-c7f8e9ad2ebb)
 
 ```
 kubectl exec -it init-pod -c main-container -- bash
