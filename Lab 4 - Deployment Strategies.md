@@ -204,7 +204,11 @@ kubectl apply -f svc-web.yaml
 kubectl get svc,ep
 ```
 
-Access you application
+#### Access you application
+http://workernodeip:32123
+![image](https://github.com/user-attachments/assets/3620566e-51b1-48f6-9ae2-6308cbff5b1a)
+
+![image](https://github.com/user-attachments/assets/ff04e08d-6848-467e-a863-9d923f8aad37)
 
 
 Create another deployment (Green)
@@ -244,6 +248,7 @@ kubectl get deployment,po
 
 
 Access this application using same service that we created previously, by changing the selector in the Service yaml file.
+![image](https://github.com/user-attachments/assets/5b825e53-4790-486e-b6ab-cbbf417df274)
 
 Replace Selector `web-blue` by `web-green`
 ```	 
@@ -251,6 +256,7 @@ kubectl replace -f svc-web.yaml --force
 ```
 Access you application on the port 32123
 
+![image](https://github.com/user-attachments/assets/ac5ecd4b-098f-40b5-be92-660582f8bc9f)
 
 
 ### Task 4: Canary Deployment in Kubernetes 
