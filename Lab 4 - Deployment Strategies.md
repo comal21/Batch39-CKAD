@@ -282,8 +282,16 @@ kubectl describe ep svc-web
 
 Access the application on port 32123. Refresh the page a few times. Sometime it will show Blue, other time it will show green. 
 
-
-
+### Cleanup
+```
+kubectl delete deploy web-green
+```
+```
+kubectl delete deploy web-blue
+```
+```
+kubectl delete svc svc-web
+```
 
 
 
