@@ -205,7 +205,9 @@ kubectl get svc,ep
 ```
 
 #### Access you application
+```
 http://workernodeip:32123
+```
 ![image](https://github.com/user-attachments/assets/3620566e-51b1-48f6-9ae2-6308cbff5b1a)
 
 ![image](https://github.com/user-attachments/assets/ff04e08d-6848-467e-a863-9d923f8aad37)
