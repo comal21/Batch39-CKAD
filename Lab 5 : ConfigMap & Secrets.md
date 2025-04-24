@@ -127,7 +127,7 @@ kind: Pod
 metadata:
   labels:
     app: web
-  name: web-pod
+  name: web-pod2
 spec:
   containers:
   - image: httpd
@@ -149,7 +149,7 @@ kubectl describe pod web-pod
 ```
 Enter the pod and check if the variable has been passed correctly or not
 ```
-kubectl exec -it web-pod -- sh
+kubectl exec -it web-pod2 -- sh
 ```
 ```
 env | grep db_
@@ -184,7 +184,7 @@ kind: Pod
 metadata:
   labels:
     app: web
-  name: web-pod
+  name: web-pod3
 spec:
   containers:
   - image: httpd
@@ -200,7 +200,7 @@ kubectl apply -f env3.yaml
 ```
 Enter the pod and check if the variable has been passed correctly or not
 ```
-kubectl exec -it web-pod -- sh
+kubectl exec -it web-pod3 -- sh
 ```
 ```
 env | grep token
@@ -226,7 +226,7 @@ kind: Pod
 metadata:
   labels:
     app: web
-  name: web-pod
+  name: web-pod4
 spec:
   volumes:
   - name: cm-volume
@@ -246,11 +246,11 @@ spec:
 kubectl apply -f env4.yaml
 ```
 ```
-kubectl describe pod web-pod
+kubectl describe pod web-pod4
 ```
 Enter the pod and check if the variable has been passed correctly or not
 ```
-kubectl exec -it web-pod -- sh
+kubectl exec -it web-pod4 -- sh
 ```
 ```
 cd /app && cat token
