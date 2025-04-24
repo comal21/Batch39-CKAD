@@ -270,11 +270,11 @@ kubectl get secret
 ```
 kubectl describe secret secret-1
 ```
-View the encrypted value using the get command
+View the encoded value using the get command
 ```
 kubectl get secrets secret-1 -o yaml
 ```
-Decrypt and reconfirm the values.
+Decode and reconfirm the values.
 ```
 echo "MTIz" | base64 -d
 ```
