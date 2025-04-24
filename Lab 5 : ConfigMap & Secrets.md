@@ -366,4 +366,15 @@ echo $password
 ```
 exit
 ```
+### Cleanup
+```
+kubectl delete po --all -n default
+```
+```
+kubectl delete cm cm-1 cm-2
+```
+```
+kubectl delete secret secret-1 mysql-credentials
+```
+
 
