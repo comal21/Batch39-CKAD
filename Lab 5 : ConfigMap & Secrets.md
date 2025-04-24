@@ -45,7 +45,7 @@ spec:
     - containerPort: 80
     env:
     - name: db_pwd
-      value: 1234
+      value: "1234"
 ```
 ```
 kubectl apply -f env.yaml
