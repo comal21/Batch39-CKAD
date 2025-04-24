@@ -58,9 +58,6 @@ Enter the pod and check if the variable has been passed correctly or not
 kubectl exec -it env-pod -- sh
 ```
 ```
-echo $db_user
-```
-```
 echo $db_pwd
 ```
 ```
@@ -82,7 +79,7 @@ kubectl get cm cm-1 -o yaml
 
 Inject the ConfigMap into the Pod Yaml File
 ```
-vi env.yaml
+vi env1.yaml
 ```
 ```yaml
 apiVersion: v1
@@ -102,7 +99,7 @@ spec:
         name: cm-1
 ```
 ```
-kubectl apply -f env.yaml
+kubectl apply -f env1.yaml
 ```
 Enter the pod and check if the variable has been passed correctly or not
 ```
@@ -122,7 +119,7 @@ kubectl get cm cm-1 -o yaml
 ```
 Inject particular variable from the ConfigMap into the Pod Yaml File
 ```
-vi env.yaml
+vi env2.yaml
 ```
 ```yaml
 apiVersion: v1
@@ -145,7 +142,7 @@ spec:
           key: db_pwd #oldkeyname
 ```
 ```
-kubectl apply -f env.yaml
+kubectl apply -f env2.yaml
 ```
 ```
 kubectl describe pod web-pod
@@ -179,7 +176,7 @@ kubectl get cm cm-2 -o yaml
 ```
 Inject particular variable from the ConfigMap into the Pod Yaml File
 ```
-vi env.yaml
+vi env3.yaml
 ```
 ```yaml
 apiVersion: v1
@@ -199,7 +196,7 @@ spec:
         name: cm-2
 ```
 ```
-kubectl apply -f env.yaml
+kubectl apply -f env3.yaml
 ```
 Enter the pod and check if the variable has been passed correctly or not
 ```
@@ -221,7 +218,7 @@ kubectl get cm
 
 Inject as volume mount
 ```
-vi env.yaml
+vi env4.yaml
 ```
 ```yaml
 apiVersion: v1
@@ -246,7 +243,7 @@ spec:
 
 ```
 ```
-kubectl apply -f env.yaml
+kubectl apply -f env4.yaml
 ```
 ```
 kubectl describe pod web-pod
