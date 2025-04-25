@@ -79,7 +79,9 @@ Try creating a new service by exposing the existing pod.
 kubectl -n ns1 expose pod pod2 --name pod21-svc --port 80 --type NodePort
 ```
 Note: Error occurs which is the expected output as the request exceeds the quota limit
-
+```
+ kubectl -n ns1 delete quota rs-quota1 rs-quota2
+```
 ### Task 3: Creating Resource Quota and Constraining Hardware Resources
 
 ```
