@@ -1,14 +1,14 @@
 
-### Lab: Exploring Kubernetes Namespaces
-
-
 #### Step 1: Verify Cluster and Current Namespace
 1. First, confirm that your `kubectl` is configured correctly and you can access your cluster.
+   ```
+   sudo su
+   ```
    ```bash
-   kubectl cluster-info
+   kubectl get nodes
    ```
 
-2. Check the available namespaces.
+3. Check the available namespaces.
    ```bash
    kubectl get ns
    ```
