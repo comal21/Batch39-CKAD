@@ -73,12 +73,12 @@ Try deploying a new pod in namespace ns1
 ```
 kubectl -n ns1 run pod3 --image nginx --port 80
 ```
-
+Note: Error occurs which is the expected output as the request exceeds the quota limit
 Try creating a new service by exposing the existing pod.
 ```
 kubectl -n ns1 expose pod pod2 --name pod21-svc --port 80 --type NodePort
 ```
-
+Note: Error occurs which is the expected output as the request exceeds the quota limit
 
 ### Task 3: Creating Resource Quota and Constraining Hardware Resources
 
@@ -168,4 +168,8 @@ spec:
 ```
 ```
 kubectl apply -f rq5.yaml
+```
+### Cleanup
+```
+kubectl delete ns ns1
 ```
