@@ -76,7 +76,7 @@ Then, exit out of the container
 kubectl run --rm -it --image=busybox net-policy 
 ```
 ```
-wget -qO- -T3 http://backend   #curl http://backend
+wget -qO- -T3 http://backend   
 ```
 ```
 exit
