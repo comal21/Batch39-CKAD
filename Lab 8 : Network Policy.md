@@ -16,6 +16,15 @@ Create pod in second namespace
 ```
 kubectl -n ns2 run ns2-pod --image nginx 
 ```
+Fetch pod Ips:
+```
+kubectl -n ns1 get pods -o wide
+```
+```
+kubectl -n ns2 get pods -o wide
+```
+Make a note of it.
+
 Enter the pod in first namespace  and check its connectivity with a pod in second namespace
 ```
 kubectl exec -it -n ns1 ns1-pod -- sh
