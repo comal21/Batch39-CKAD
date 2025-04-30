@@ -197,7 +197,7 @@ Cluster Role Binding: A ClusterRoleBinding binds a ClusterRole to a set of subje
 kubectl create sa -n ns1 sa2
 ```
 ```
-kubectl get sa
+kubectl get sa -n ns1
 ```
 
 #### Create a new Cluster Role and Cluster Role Binding 
