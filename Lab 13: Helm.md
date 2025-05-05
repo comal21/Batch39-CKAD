@@ -33,9 +33,8 @@ helm search repo wordpress
 
 To install the WordPress application using the Bitnami Helm chart with the release name my-wordpress
 ```
-helm install my-wordpress bitnami/wordpress
+helm install my-wordpress bitnami/wordpress --set service.type=NodePort --set mariadb.primary.persistence.enabled=false
 ```
-
 To list all the releases currently installed on your Kubernetes cluster
 ```
 helm list
@@ -65,18 +64,6 @@ helm fetch bitnami/wordpress
 ```
 tar -xvzf wordpress-23.1.14.tgz
 ```
-
-
-To remove a Helm repository from your local Helm client configuration
-```
-helm repo remove stable-charts
-```
-
-To remove Helm package manager
-```
-sudo apt-get remove helm
-```
-
 ### Wordpress 
 In the above steps we have already installed wordpress
 
@@ -95,18 +82,17 @@ Also Notice that the front end of wordpress are part of deployment
 ```
 kubectl get deploy
 ```
-View the services using the below commands. Make note of the EXTERNAL IP of the LoadBalancer service.
+View the services using the below commands. 
 ```
 kubectl get all
 ```
 
-If your load balancer is pending, edit it to NodePort
+Open the browser and paste the public ip of workernode : nodeport number. Observe that the WordPress site is up and running.
 
+To remove a Helm repository from your local Helm client configuration
 ```
-kubectl edit svc wordpress
+helm repo remove stable-charts
 ```
-
-Open the browser and paste the service endpoint noted on the previous step. Observe that the WordPress site is up and running.
 
 Add `/admin` at the end of the URL to be directed to the login page
 
@@ -118,6 +104,9 @@ echo Username: user
 echo Password: $(kubectl get secret --namespace default wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
 ```
 
-
+To remove Helm package manager
+```
+sudo apt-get remove helm
+```
  
  
